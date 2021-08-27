@@ -21,10 +21,13 @@ before_deploy:
   - pyenv global 3.7.1
   - pip install -U pip
   - pip install awscli
-  
+
 deploy:
   provider: script
   script:
     - ./deploy.sh
   on:
     branch: master
+
+code_climate:
+  secure: $CODE_CLIMATE_TOKEN
