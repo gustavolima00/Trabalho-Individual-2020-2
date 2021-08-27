@@ -1,1 +1,1 @@
-docker-compose --file deploy-client.yml up || exit 1
+docker-compose --file deploy-client.yml up --build || exit 1

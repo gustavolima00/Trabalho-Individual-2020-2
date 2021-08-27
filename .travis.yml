@@ -22,16 +22,13 @@ before_deploy:
   - pip install -U pip
   - pip install awscli
 
-jobs:
-  include:
-    - stage: build-and-test
-      name: Build and Test
-      script:
-        - ./build_and_test.sh
-        
 deploy:
   provider: script
   script:
-    - ./deploy.sh
+    - chmod -R 777 .
+    - sh deploy.sh
   on:
     branch: master
+
+code_climate:
+  secure: $CODE_CLIMATE_TOKEN
