@@ -4,18 +4,7 @@ services:
 env:
   - DOCKER_COMPOSE_VERSION=1.29.2
   
-before_install:
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
 
-jobs:
-  include:
-    - stage: build-and-test
-      name: Build and Test
-      script:
-        - ./build_and_test.sh
 
 before_deploy:
   - pyenv global 3.7.1
@@ -25,6 +14,7 @@ before_deploy:
 deploy:
   provider: script
   script:
+    - chmod -R 777 .
     - sh deploy.sh
   on:
     branch: master
