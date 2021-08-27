@@ -25,8 +25,7 @@ before_deploy:
 deploy:
   provider: script
   script:
-    - chmod -R 777 .
-    - sh deploy.sh
+    - sudo sh deploy.sh
   on:
     branch: master
 
