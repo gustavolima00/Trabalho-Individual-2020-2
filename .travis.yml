@@ -22,18 +22,3 @@ jobs:
         - ./build_and_test.sh
       on: 
         branch: master
-
-deploy:
-  # deploy api
-  - provider: script
-    script: bash ./deploy_api.sh
-    on:
-      branch: master
-  # deploy client
-  - provider: script
-    script: bash ./deploy_client.sh
-    on:
-      branch: master
-
-code_climate:
-  secure: "${CODE_CLIMATE_TOKEN}"
