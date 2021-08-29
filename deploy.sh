@@ -1,1 +1,0 @@
-docker-compose --file deploy-client.yml up --build || exit 1

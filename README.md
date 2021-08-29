@@ -3,12 +3,13 @@
 
 ## Containers
 
-- DB
-  -  Container com banco de dados postgres
-- API
-  - Container com aplicação django
-- Client
-  - Container com aplicação HTML
+### API 
+##### db 
+Container contendo uma imagem postgres:13.0-alpine
+##### web
+Containter contendo aplicação django
+##### nginx
+Container contendo nginx e suas configurações para rodar o servidor em produção
 
 ## Scripts de automação
 
