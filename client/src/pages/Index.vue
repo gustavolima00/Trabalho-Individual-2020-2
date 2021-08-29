@@ -18,7 +18,7 @@
       <q-btn
         color="white"
         text-color="black"
-        label="Nova tarefa changed"
+        label="Nova tarefa"
         @click="persistent = true"
       />
       <q-dialog
