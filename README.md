@@ -3,7 +3,10 @@
 
 ## Containers
 
-### API 
+### Api
+
+#### Containers
+
 ##### db 
 Container contendo uma imagem postgres:13.0-alpine
 ##### web
@@ -11,28 +14,24 @@ Containter contendo aplicação django
 ##### nginx
 Container contendo nginx e suas configurações para rodar o servidor em produção
 
-## Scripts de automação
+#### Docker compose
 
-### Rodar localcmente
-Para rodar o servidor o docker-compose.yml tem um orquestrador de containers que executa o Database API e o Client 
+Para os containers da api existem 2 tipos de docker-compose, o *docker-compose.yml* e o *docker-compose.prod.yml* que são utilizados para rodar a aplicação localmente e em produção respectivamente
 
-### Testes
 
-#### API 
-Para a execução dos testes na api existe o script test-api.yml que é rodado pelo travis 
+#### Produção
 
-#### Client
-Para a execução dos testes no client existe um script test-client.yml que é rodado pelo travis a cada commit
 
-### Deploy 
+#### Servidor
 
-#### Client
+Para execução da aplicação é utilizada uma instância EC2 da amazon, atualmente hospedados na seguinte URL: http://ec2-54-207-153-204.sa-east-1.compute.amazonaws.com
 
-##### Descirção 
+### Client
 
-Para a execução do deploy do client é executado um script deploy-client.yml que é executado pelo travis a cada nova alteração na master
+#### Docker compose
 
-##### Site
+Para os containers da api existem 2 tipos de docker-compose, o *docker-compose.yml* e o *docker-compose.prod.yml* que são utilizados para rodar a aplicação localmente e em produção respectivamente
 
-O site é hospedado estaticamente em um bucket s3 da amazon nesse link 
-http://trabalho-individual-2020-2.s3-website-sa-east-1.amazonaws.com/
+#### Servidor
+
+Para execução da aplicação é utilizada uma instância EC2 da amazon, atualmente hospedados na seguinte URL: http://ec2-54-233-150-153.sa-east-1.compute.amazonaws.com/

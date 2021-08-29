@@ -70,7 +70,7 @@
 
 <script>
 import axios from 'axios';
-const BASE_URL = 'http://0.0.0.0:8000'
+const BASE_URL = 'http://ec2-54-207-153-204.sa-east-1.compute.amazonaws.com'
 export default {
   name: "PageIndex",
   data() {
