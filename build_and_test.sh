@@ -1,2 +1,2 @@
-docker-compose --file test-api.yml up --exit-code-from api --build || exit 1
-docker-compose --file test-client.yml up --exit-code-from client --build || exit 1
+docker-compose -f api/docker-compose.prod.yml up --build -d || exit 1
+docker-compose -f api/docker-compose.prod.yml exec web python3 manage.py test || exit 1
